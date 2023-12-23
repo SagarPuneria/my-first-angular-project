@@ -1,0 +1,20 @@
+<section>
+    <h2>Parent Component</h2>
+    <!-- <app-child-day4 childDataAttribute="hey today is sunday"></app-child-day4> -->
+    <app-child-day4 [childDataAttribute]="messageFromParent" [childObjectDataAttribute]="objectFromParent"
+        (eventForStringData)="parentMethodForString($event)"></app-child-day4>
+    <app-child-day4 (eventForObjectData)="parentMethodForObject($event)"></app-child-day4>
+    <button (click)="sendDatatoChild()">Send data to child</button>
+    <label>Data from Child: {{stringDataFromChild}}</label>
+
+    <hr />
+    <label>User Details from child</label>
+    <ul>
+        <li>{{dataObjFromChild.name}}</li>
+        <li>{{dataObjFromChild.empId}}</li>
+        <li>{{dataObjFromChild.address}}</li>
+        <li>{{dataObjFromChild.city}}</li>
+        <li>{{dataObjFromChild.state}}</li>
+        <li>{{dataObjFromChild.designation}}</li>
+    </ul>
+</section>

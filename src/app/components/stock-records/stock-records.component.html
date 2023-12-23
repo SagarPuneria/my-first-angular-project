@@ -1,0 +1,38 @@
+<h2>stock-records works!</h2>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Stock Name</th>
+            <th scope="col">Stock Name</th>
+            <th scope="col">Stock Name</th>
+            <th scope="col">Stock Market Cap</th>
+            <th scope="col">Stock Market Sector</th>
+            <th scope="col">Release Date</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let record of stockRecords;  let i = index" [ngSwitch]="record.symbol" appHighlight>
+            <td [class]="stockDefaultColor">{{record.id}}</td>
+            <td [class]="'bgColorSelection'">{{record.stockName}}</td>
+            <td [ngStyle]="{'color':'white', 'background-color':'black'}">{{record.stockName}}</td>
+            <td [style]="{'color':'black', 'background-color':stockDefaultColor}">{{record.stockName}}</td>
+            <td [ngClass]="record.stockMarketCap>100?'stockSellColor':'stockBuyColor'">{{record.stockMarketCap}}</td>
+            <td [ngClass]="'stockBuyColor'">{{record.stockMSector}}</td>
+            <td>{{record.releaseDate}}</td>
+            <td *ngSwitchCase="'BIOS'">Hold{{record.symbol}}</td>
+            <td *ngSwitchCase="'RIBT'">Sell{{record.symbol}}</td>
+            <td [class]="record.stockMarketCap>100?'stockSellColor':'stockBuyColor'" *ngSwitchDefault>
+                {{record.symbol}}</td>
+            <td>
+                <button [ngClass]="['btn', 'btn-primary']">Edit Stock</button>
+                <!-- <button [ngClass]="{'btn': 'true', 'btn-danger':'true'}">Update Stock</button> -->
+                <!-- <button [class]="['btn', 'btn-primary']">Edit Stock</button> -->
+                <button [class]="{'btn':'true', 'btn-danger':'true'}">Update Stock</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<input type="color" [(ngModel)]="stockDefaultColor">

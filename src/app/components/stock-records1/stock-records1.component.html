@@ -1,0 +1,68 @@
+<h2>Stock records 1</h2>
+<input type="color" [(ngModel)]="selectBgColor">
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Stock Name</th>
+            <!-- <th scope="col">Stock Name lowercase</th>
+            <th scope="col">Stock Name uppercase</th>
+            <th scope="col">Stock Name titlecase</th>
+            <th scope="col">Stock Name slice</th> -->
+            <th scope="col">Stock Market Cap</th>
+            <!-- <th scope="col">Stock Market Cap wtih number</th>
+            <th scope="col">Stock Market Cap with number with param</th>
+            <th scope="col">Stock Market Cap percent</th>
+            <th scope="col">Stock Market Cap currency</th>
+            <th scope="col">Stock Market Cap currency with country code</th> -->
+            <th scope="col">Stock Market Sector</th>
+            <th scope="col">Release Date</th>
+            <!--  <th scope="col">Release Date with normal pipe</th>
+            <th scope="col">Release Date short date and time</th>
+            <th scope="col">Release Date medium date and time</th>
+            <th scope="col">Release Date long date and time</th>
+            <th scope="col">Release Date full date and time</th>
+            <th scope="col">Release Date short time only</th>
+            <th scope="col">Release Date medium time only</th>
+            <th scope="col">Release Date long time only</th>
+            <th scope="col">Release Date full time only</th>
+            <th scope="col">Release Date short date only</th>
+            <th scope="col">Release Date medium date only</th>
+            <th scope="col">Release Date long date only</th>
+            <th scope="col">Release Date full date only</th> -->
+            <th scope="col">Symbol</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let record of stock1Records; let i = index" [appHighlight]="selectBgColor">
+            <td>{{ record.id }}</td>
+            <td>{{ record.stockName }}</td>
+            <!-- <td>{{ record.stockName | lowercase}}</td>
+            <td>{{ record.stockName | uppercase}}</td>
+            <td>{{ record.stockName | titlecase}}</td>
+            <td>{{ record.stockName | slice:3:9}}</td> -->
+            <td>{{ record.stockMarketCap }}</td>
+            <!-- <td>{{ record.stockMarketCap | number }}</td>
+            <td>{{ record.stockMarketCap | number : "3.2-5" }}</td>
+            <td>{{ record.stockMarketCap | percent }}</td>
+            <td>{{ record.stockMarketCap | currency }}</td>
+            <td>{{ record.stockMarketCap | currency : "INR" }}</td> -->
+            <td>{{ record.stockMSector }}</td>
+            <td>{{ record.releaseDate }}</td>
+            <!-- <td>{{ record.releaseDate | date }}</td>
+            <td>{{record.releaseDate | date : 'short'}}</td>
+            <td>{{record.releaseDate | date : 'medium'}}</td>
+            <td>{{record.releaseDate | date : 'long'}}</td>
+            <td>{{record.releaseDate | date : 'full'}}</td>
+            <td>{{record.releaseDate | date : 'shortTime'}}</td>
+            <td>{{record.releaseDate | date : 'mediumTime'}}</td>
+            <td>{{record.releaseDate | date : 'longTime'}}</td>
+            <td>{{record.releaseDate | date : 'fullTime'}}</td>
+            <td>{{record.releaseDate | date : 'shortDate'}}</td>
+            <td>{{record.releaseDate | date : 'mediumDate'}}</td>
+            <td>{{record.releaseDate | date : 'longDate'}}</td>
+            <td>{{record.releaseDate | date : 'fullDate' | uppercase}}</td> -->
+            <td>{{ record.symbol }}</td>
+        </tr>
+    </tbody>
+</table>

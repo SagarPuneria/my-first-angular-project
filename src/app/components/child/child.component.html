@@ -1,0 +1,10 @@
+<section>
+    <h2>Child component</h2>
+    <p>Data from parent: {{childDataAttribute}}</p>
+    <p>Name: {{ childObjectDataAttribute.name }}</p>
+    <p>Age: {{ childObjectDataAttribute.age }}</p>
+    <p>City: {{ childObjectDataAttribute.city }}</p>
+
+    <button (click)="sendStringDataToParent()">Send String Data</button>
+    <button (click)="sendDataObjToParent()">Send Obj Data</button>
+</section>

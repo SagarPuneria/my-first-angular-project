@@ -1,0 +1,45 @@
+<h2>User details component</h2>
+<!-- <table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">City</th>
+            <th scope="col">Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{userRecords[0].name}}</td>
+            <td>{{userRecords[0].age}}</td>
+            <td>{{userRecords[0].address.city}}</td>
+            <td>{{userRecords[0].address.code}}</td>
+        </tr>
+        <tr>
+            <td>{{userRecords[1].name}}</td>
+            <td>{{userRecords[1].age}}</td>
+            <td>{{userRecords[1].address.city}}</td>
+            <td>{{userRecords[1].address.code}}</td>
+        </tr>
+    </tbody>
+</table> -->
+<table class="table" appHighlight>
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">City</th>
+            <th scope="col">Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userRecords; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.address.city}}</td>
+            <td>{{user.address.code}}</td>
+        </tr>
+    </tbody>
+</table>

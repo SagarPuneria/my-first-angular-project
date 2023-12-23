@@ -1,0 +1,47 @@
+<!-- Object data binding -->
+<h2>User info component</h2>
+<button (click)="toggleTable()">Toggle Table</button>
+<table class="table" *ngIf="isUserTableVisible" appHighlight>
+    <!-- <table class="table"> -->
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">City</th>
+            <th scope="col">Code</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <tr *ngIf="isUserTableRowVisible"> -->
+        <tr>
+            <td>
+                <!-- <input type="text" placeholder="enter the value" [value]="user.name"/> -->
+                <input *ngIf="!isUserTableRowVisible" type="text" placeholder="enter the value"
+                    [(ngModel)]="user.name" /> <!-- [(ngModel)] is standard model for two way binding -->
+                <span *ngIf="isUserTableRowVisible">{{user.name}}</span>
+            </td>
+            <td>
+                <!-- <input type="text" placeholder="enter the value" value="{{user.age}}"/> -->
+                <!-- <input type="text" placeholder="enter the value" value="{{user.age}}" (change)="test($event)"/> -->
+                <input *ngIf="!isUserTableRowVisible" type="text" placeholder="enter the value"
+                    [(ngModel)]="user.age" />
+                <span *ngIf="isUserTableRowVisible">{{user.age}}</span>
+            </td>
+            <td>
+                <input *ngIf="!isUserTableRowVisible" type="text" placeholder="enter the value"
+                    [(ngModel)]="user.address.city" />
+                <span *ngIf="isUserTableRowVisible">{{user.address.city}}</span>
+            </td>
+            <td>
+                <input *ngIf="!isUserTableRowVisible" type="text" placeholder="enter the value"
+                    [(ngModel)]="user.address.code" />
+                <span *ngIf="isUserTableRowVisible">{{user.address.code}}</span>
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)="editUser()">Edit User</button>
+                <button class="btn btn-success" (click)="updateUser()">Update User</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

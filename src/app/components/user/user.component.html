@@ -1,0 +1,41 @@
+<h1>Binding in Angular - primitive data types</h1>
+
+<section class="interpolation-section">
+    <h2>String Interpolation - variable data binding (TS to HTML)</h2>
+    <h3>Title: {{title}}</h3>
+    <h4>SubTitle: {{subTitle}}</h4>
+    <p>Count:<span>{{count}}</span></p>
+    <p>isValid: <span>{{isValid}}</span></p>
+    <p>message: <span>{{message}}</span></p>
+    <h4>String Interpolation - template evaluation</h4>
+    <ul>
+        <li>sum of 1 and 2 : {{1 + 2 }}</li>
+        <li>combining title and subtitle {{title+ subTitle}}</li>
+        <li>Todays date is : {{date}}</li>
+        <li>Generate random number {{result}}</li>
+    </ul>
+</section>
+
+<section class="property-section">
+    <h1 appHighlight>Property binding ( TS to HTML)</h1>
+    <label>Boolean property binding:</label><button [disabled]="!isValid">Submit</button><br />
+    <label>String property binding:</label><input type="text" [placeholder]="title"><br />
+    <label>String property binding:</label><input type="text" [placeholder]="subTitle"><br />
+    <label>Count property binding:</label><input type="number" [value]="count"><br />
+    <label>Todays date is : </label><input type="text" [value]="date"><br />
+    <label>generate some random number :</label><input type="number" [value]="result"><br />
+</section>
+
+<section class="event-section" appHighlight>
+    <h1>Event binding ( HTML to TS)</h1>
+    <p>Count:<span>{{count}}</span></p>
+    <button (click)="incrementCount()">Increment Count</button>
+    <button (click)="decrementCount()">Decrement Count</button>
+    <button (click)="sendMessage('hello from template')">Send message</button>
+    <select id="fruit" (change)="onFruitSelection($event)">
+        <option value="apple">Apple</option>
+        <option value="banana">Banana</option>
+        <option value="orange">Orange</option>
+    </select>
+    <p>you have selected: {{ selectedFruit }}</p>
+</section>

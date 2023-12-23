@@ -1,0 +1,24 @@
+.interpolation-section{
+    border:1px solid blue;
+    border-radius:5px;
+    background-color: azure;
+    margin:10px;
+    padding:10px;
+}
+
+.property-section{
+    border:1px solid rgb(244, 66, 7);
+    border-radius:5px;
+    background-color: rgb(236, 202, 156);
+    margin:10px;
+    padding:10px;
+}
+
+.event-section{
+    border:1px solid rgb(34, 117, 1);
+    border-radius:5px;
+    background-color: rgb(191, 255, 198);
+    margin:10px;
+    padding:10px;
+}
+

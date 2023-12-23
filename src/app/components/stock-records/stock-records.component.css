@@ -1,0 +1,15 @@
+.stockDefaultColor {
+    color: rgb(0, 255, 8);
+}
+
+.bgColorSelection {
+    color: blue;
+}
+
+.stockSellColor {
+    color: rgb(255, 55, 0);
+}
+
+.stockBuyColor {
+    color: rgb(4, 0, 255);
+}
